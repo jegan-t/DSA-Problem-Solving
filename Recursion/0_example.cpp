@@ -1,0 +1,16 @@
+#include<iostream>
+
+using namespace std;
+
+void fun1(int n) {
+    cout << "Calling fun1( " << n << " )" << endl;
+    if (n > 0) {
+        cout << n << " " ;
+        fun1(n-1);
+    }
+}
+
+int main() {
+    int x = 5;
+    fun1(x);
+}
