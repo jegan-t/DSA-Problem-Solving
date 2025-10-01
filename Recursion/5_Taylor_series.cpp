@@ -36,7 +36,31 @@ int main() {
 
  */
 
+#include <iostream>
+using namespace std;
+
+double expLoop(int x, int n = 10) {
+    double result = 1.0;   // start with first term = 1
+    double numerator = 1.0; // x^k
+    double denominator = 1.0; // k!
+
+    for (int k = 1; k <= n; k++) {
+        numerator *= x;        // multiply by x each time
+        denominator *= k;      // multiply by k each time
+        result += numerator / denominator; // add term
+    }
+
+    return result;
+}
+
 int main() {
-    cout << exp(1, 10) << endl;
+    cout << expLoop(1, 10) << endl;  // approximation of e^1
+    cout << expLoop(2, 15) << endl;  // approximation of e^2
     return 0;
 }
+
+
+// int main() {
+//     cout << exp(1, 10) << endl;
+//     return 0;
+// }
